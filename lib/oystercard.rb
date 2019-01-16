@@ -6,8 +6,7 @@ class Oystercard
 
   def initialize
     @balance = 0
-    @travelling = false
-    # @journey = false
+    @in_journey = false
   end
 
   def topup(amount)
@@ -23,29 +22,17 @@ class Oystercard
     @balance -=amount
   end
 
-  def travelling?
-    @travelling
+  def in_journey?
+    @in_journey
   end
 
   def touch_in
-    @travelling = true
+    @in_journey = true
   end
 
   def touch_out
-    @travelling = false
+    @in_journey = false
   end
-
-  # def in_journey?
-  #   @journey
-  # end
-  #
-  # def touch_in
-  #   @journey = true
-  # end
-  #
-  # def touch_out
-  #   @journey = false
-  # end
 
 private :add
 

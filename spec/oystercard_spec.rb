@@ -35,18 +35,18 @@ end
 describe "#journey?" do
 
   it 'is initially not in a journey' do
-    expect(subject).not_to be_travelling
+    expect(subject).not_to be_in_journey
   end
 
   it "can touch in" do
     subject.touch_in
-    expect(subject).to be_travelling
+    expect(subject).to be_in_journey
   end
 
   it "can touch out" do
     subject.touch_in
     subject.touch_out
-    expect(subject).not_to be_travelling
+    expect(subject).not_to be_in_journey
   end
 
   # it "returns true / false for journey" do
@@ -56,7 +56,7 @@ describe "#journey?" do
   #     subject.touch_in
   #     expect(subject.in_journey?).to eq(true)
   #   end
-  #
+  
   #   it "allows user to touch out" do
   #     subject.touch_out
   #     expect(subject.in_journey?).to eq(false)
